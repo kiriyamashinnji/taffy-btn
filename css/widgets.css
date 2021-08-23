@@ -1,0 +1,156 @@
+.control-leaf {
+  position: fixed;
+  bottom: 6rem;
+  right: 4rem;
+  width: 4.5rem;
+  transform-origin: bottom center;
+  filter: drop-shadow(0 0 3px #fd507e71);
+}
+
+.control-leaf.l-1 {
+  transition: 0.2s linear;
+  transform: rotate(30deg);
+}
+
+.control-leaf.l-2 {
+  transition: 0.2s linear;
+  transform: rotate(120deg);
+}
+
+.control-leaf.l-3 {
+  transition: 0.2s linear;
+  transform: rotate(210deg);
+}
+
+.control-leaf.l-4 {
+  transition: 0.2s linear;
+  transform: rotate(300deg);
+}
+
+.control-leaf.l-folded {
+  transform: rotate(30deg);
+}
+
+.expanded-leaf {
+  position: fixed;
+  transform: rotate(30deg);
+  transform-origin: bottom center;
+  bottom: 6rem;
+  right: 4rem;
+  width: 4.5rem;
+  filter: drop-shadow(0 0 3px #fd507e71);
+}
+
+.expanded-leaf.l-1 {
+  transform: translateY(0) rotate(30deg);
+}
+
+.expanded-leaf.l-2 {
+  transition: 0.06s linear;
+  transform: translateY(-6rem) rotate(30deg) ;
+}
+
+.expanded-leaf.l-3 {
+  transition: 0.12s linear;
+  transform: translateY(-12rem) rotate(30deg);
+}
+
+.expanded-leaf.l-4 {
+  transition: 0.18s linear;
+  transform: translateY(-18rem) rotate(30deg);
+}
+
+.expanded-leaf.l-5 {
+  transition: 0.24s linear;
+  transform: translateY(-24rem) rotate(30deg);
+}
+
+.expanded-leaf.l-folded {
+  transform: rotate(30deg);
+  filter: none;
+}
+
+.control-leaf {
+  z-index: 2;
+}
+
+.leaf-content { 
+  position: fixed;
+  transform: rotate(30deg);
+  transform-origin: bottom center;
+  bottom: 6rem;
+  right: 4rem;
+  width: 3rem;
+}
+
+.leaf-content.l-5 {
+  bottom: 7rem;
+  right: 4.1rem;
+  width: 2.4rem;
+  transition: 0.24s linear;
+  transform: translateY(-24rem) rotate(30deg);
+}
+
+.leaf-content.l-4 {
+  bottom: 7rem;
+  right: 4.35rem;
+  width: 2.5rem;
+  transition: 0.18s linear;
+  transform: translateY(-18rem) rotate(30deg);
+}
+
+.leaf-content.l-3 {
+  bottom: 7.25rem;
+  right: 4.15rem;
+  width: 2.8rem;
+  transition: 0.12s linear;
+  transform: translateY(-12rem) rotate(30deg);
+}
+
+.leaf-content.l-2 {
+  bottom: 7.05rem;
+  right: 4.28rem;
+  width: 2.8rem;
+  transition: 0.06s linear;
+  transform: translateY(-6rem) rotate(30deg);
+}
+
+.leaf-content.l-folded {
+  transform: rotate(30deg);
+}
+
+.leaf-description {
+  font-size: 1em;
+  position: fixed;
+  border-radius: 10px;
+  background: rgba(97,97,97,.7);
+  padding: 0.4rem 0.6rem;
+  color: #fff;
+  bottom: 7rem;
+  right: 8rem;
+}
+
+.leaf-description.l-2 {
+  transition: 0.06s linear;
+  transform: translateY(-6rem);
+}
+
+.leaf-description.l-3 {
+  transition: 0.12s linear;
+  transform: translateY(-12rem);
+}
+
+.leaf-description.l-4 {
+  transition: 0.18s linear;
+  transform: translateY(-18rem);
+}
+
+.leaf-description.l-5 {
+  transition: 0.24s linear;
+  transform: translateY(-24rem);
+}
+
+.leaf-description.l-folded{
+  transform: none;
+  opacity:0
+}
