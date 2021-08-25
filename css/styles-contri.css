@@ -1,0 +1,64 @@
+.footer-contri {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 1rem;
+  height: 6rem;
+  text-align: center;
+  background-color: var(--bs-secondary);
+}
+
+.upload-notice-text {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  color: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  padding-bottom: 0.1rem;
+  text-align: left;
+  background-color: var(--bs-primary);
+  box-shadow: 3px 3px 5px #fd507e8f;
+}
+
+.upload-btn {    
+  margin: 0.5rem;
+  border-radius: 10px;
+  display: flex;
+  height: 10rem;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bs-secondary);
+}
+
+.upload-card-box {    
+  width: 90%;
+  display: flex;
+  height: 8.5rem;
+  border: 5px dashed #fff;
+  border-radius: 15px;
+  cursor: pointer;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-card-title {
+  color: #fff;
+  font-size: 19px;
+}
+
+.upload-card-file {
+  display: none;
+}
+
+.files input {
+  position: absolute;
+  height: 8.5rem;
+  padding: 0;
+  cursor: pointer;
+  position: absolute;
+  width: 21%;
+  opacity: 0;
+}

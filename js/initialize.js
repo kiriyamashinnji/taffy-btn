@@ -51,12 +51,16 @@ function initializeSidebarBackground() {
   $("#sidebar-mask-container").css({width: String($("#sidebar-wrapper").width()+10)});
   $("#sidebar-mask-container").css({height: String($("#sidebar-wrapper").height())});
   $("#sidebar-mask").css({width: String($("#sidebar-wrapper").width())});
-  let top_px = -$("#sidebar-mask").width() / 356 * originalMid + $(".list-group-item-active>*").offset().top;
+  let top_px = -$("#sidebar-mask").width() / 356 * originalMid + 
+                $(".list-group-item-active>*").offset().top - 
+                $(".sidebar-heading").offset().top;
   $("#sidebar-mask").css({top: String(top_px)+'px'});
 }
 
 function updateSidebarBackground() {
-  let top_px = -$("#sidebar-mask").width() / 356 * originalMid + $(".list-group-item-active>*").offset().top;
+  let top_px = -$("#sidebar-mask").width() / 356 * originalMid + 
+                $(".list-group-item-active>*").offset().top - 
+                $(".sidebar-heading").offset().top;
   $("#sidebar-mask").css({top: String(top_px)+'px'});
 }
 
