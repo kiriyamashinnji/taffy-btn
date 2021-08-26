@@ -13,7 +13,8 @@ async function initialize() {
       return data.data;
     });
 
-  let categories, soundURLs = [];
+  let categories,
+    soundURLs = [];
 
   categories = overview.reduce((list, i) => {
     list.push(i.button_classification);
@@ -46,10 +47,12 @@ function initializeButtons(idx) {
 
 function addButton(btn, idx) {
   $(".tf-btns").append(
-    $('<div class="tf-btn"><div class="tf-btn-content">' +
-      btn.voice_name +
-      '</div><img src="assets/four.svg" alt="" class="tf-btn-4" id="' + 
-      btn.voice_id + '"></div>'
+    $(
+      '<div class="tf-btn"><div class="tf-btn-content">' +
+        btn.voice_name +
+        '</div><img src="assets/four.svg" alt="" class="tf-btn-4" id="' +
+        btn.voice_id +
+        '"></div>'
     ).click(() => {
       player.play(btn.voice_url);
     })
