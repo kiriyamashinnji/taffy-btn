@@ -95,6 +95,7 @@ function initializeSidebar(text, idx) {
   );
 
   $("#sidebar-" + String(idx)).click(() => {
+    $(".list-group-item-active").addClass("list-group-item");
     $(".list-group-item-active").removeClass("list-group-item-active");
     $("#sidebar-" + String(idx)).removeClass("list-group-item");
     $("#sidebar-" + String(idx)).addClass("list-group-item-active");
