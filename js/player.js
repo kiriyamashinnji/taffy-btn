@@ -8,16 +8,24 @@ class Player {
   }
 
   play(url) {
-    if (!self.overlap) {
+    if (!this.overlap) {
       this.pause();
+      this.playList.forEach((audio) => {
+        $("#" + audio.url.match(/.*\/(.*)\.mp3$/)[1]).removeClass(
+          "tf-btn-4-active"
+        );
+      });
       this.playList = [];
     }
     let audio = new Audio(url);
     audio.player = this;
     audio.onended = audioEnd;
     this.playList.push(audio);
-    audio.loop = self.loop;
+    audio.loop = this.loop;
     audio.play();
+
+    audio.url = url;
+    $("#" + url.match(/.*\/(.*)\.mp3$/)[1]).addClass("tf-btn-4-active");
   }
 
   pause() {
@@ -34,10 +42,12 @@ class Player {
 
   setMode(mode, overlap) {
     if (mode == "loop") {
+      this.loop = true;
       this.playList.forEach((sound) => {
         sound.loop = true;
       });
-    } else if (mode == "no-loop") {
+    } else {
+      this.loop = false;
       this.playList.forEach((sound) => {
         sound.loop = false;
       });
@@ -50,8 +60,12 @@ class Player {
   remove(audio) {
     let newPlayList = [];
     this.playList.forEach((sound) => {
-      if (sound == audio) sound.pause();
-      else newPlayList.push(sound);
+      if (sound == audio) {
+        $("#" + sound.url.match(/.*\/(.*)\.mp3$/)[1]).removeClass(
+          "tf-btn-4-active"
+        );
+        sound.pause();
+      } else newPlayList.push(sound);
     });
     this.playList = newPlayList;
   }
@@ -63,6 +77,7 @@ class Player {
 }
 
 function audioEnd() {
+  $("#" + this.url.match(/.*\/(.*)\.mp3$/)[1]).removeClass("tf-btn-4-active");
   if (this.player.playList.length == 1 && this.player.random)
     this.player.playRandom();
   if (this.ended) this.player.remove(this);

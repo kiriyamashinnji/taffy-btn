@@ -4,6 +4,7 @@
   --bs-primary: #fd507e;
   --bs-primary-shadow: rbga(255, 255, 243, 0.5);
   --bs-secondary: #ffe2df;
+  --bs-btn-hover: #cf2f59;
 }
 
 .icon {
@@ -46,6 +47,7 @@
 .list-group-item:hover > .item-content, 
 .list-group-item:focus > .item-content {
   color: var(--bs-primary);
+  z-index: 3;
   padding: 0;
   background-color: var(--bs-body-rgb);
   border-radius: 13px;
@@ -155,6 +157,10 @@
   margin: 0.5rem;
 }
 
+.tf-btn:hover {
+  background-color: var(--bs-btn-hover);
+}
+
 .tf-btn-content {
   font-size: 1.1rem;
   color: var(--bs-body-bg);
@@ -164,6 +170,16 @@
 .tf-btn-4 {
   height: 1.3rem;
   margin-left: 0.5rem;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+.tf-btn-4.tf-btn-4-active{
+  -webkit-animation:spin 1s linear infinite;
+  -moz-animation:spin 1s linear infinite;
+  animation:spin 1s linear infinite;
 }
 
 .tf-footer {
